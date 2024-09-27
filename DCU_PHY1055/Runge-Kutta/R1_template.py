@@ -1,22 +1,19 @@
-# code courtesy of Adam Dempsey
-# modified for PHY1055 by Oisín Creaner
-
-# import libraries
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import integrate
-
+a = 2
+b = 3
 # define the nonlinear derivative function
 def nonlinear1(t, y):
     """
-    Calculates the derivative value for the differential equation given in experiment R1
+    Calculates the derivative value for the differential equation given i   n experiment R1
     :param t: a float for the time variable
     :param y: a float for the dependent variable
     :return dydt a float for the derivative of the differential equation:
     """
 
     # Calculate the derivative explicitly
-    dydt = -y**3 + np.sin(t)
+    dydt = -a*y**3 + b*np.sin(t)
 
     # return the value
     return dydt
@@ -55,7 +52,14 @@ def main():
 
     # plot the solution
     plt.plot(t,y,'b.')
-    plt.show()
+    plt.xlabel("Time (s)")
+    plt.ylabel("y")
+    
 
+# Create two plot elements (lines) with different styles
+ 
+               
+    plt.show()
+    
 if __name__ == '__main__':
     main()
